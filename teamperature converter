@@ -1,0 +1,66 @@
+using System;
+using System.Linq;
+
+
+namespace temperature_converter
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("The type of temperature unit you want to convert (F, C, K): ");
+            char tempUnit = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("The unit you want to convert into (F, C, K): ");
+            char tempUnit2 = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("The value you want to convert: ");
+            double num1 = Convert.ToDouble(Console.ReadLine());
+
+            double seged = 0;
+            double seged1 = 0;
+            double seged2 = 0;
+            double seged3 = 0;
+            double seged4 = 0;
+            double seged5 = 0;
+
+            if (tempUnit == 'f' && tempUnit2 == 'c')
+            {
+                seged = (num1 - 32) * 0.5556;
+
+                Console.WriteLine($"From fahrenheit to celsius: {seged}");
+            }
+            else if (tempUnit == 'c' && tempUnit2 == 'f')
+            {
+                seged1 = (num1 * 1.8) + 32;
+
+                Console.WriteLine($"From celsius to fahrenheit {seged1}");
+            }
+            else if (tempUnit == 'k' && tempUnit2 == 'c')
+            {
+                seged2 = (num1 - 273.15);
+
+                Console.WriteLine($"From kelvin to celsius: {seged2}");
+            }
+            else if (tempUnit == 'c' && tempUnit2 == 'k')
+            {
+                seged3 = (num1 + 273.15);
+
+                Console.WriteLine($"From celsius to kelvin: {seged3}");
+            }
+            else if (tempUnit == 'f' && tempUnit2 == 'k')
+            {
+                seged4 = (num1 + 459.67) * 0.5556;
+
+                Console.WriteLine($"From fahrenheit to kelvin: {seged4}");
+            }
+            else if (tempUnit == 'k' && tempUnit2 == 'f')
+            {
+                seged5 = (num1 * 1.8) - 459.67;
+
+                Console.WriteLine($"From kelvin to fahrenheit: {seged5}");
+            }
+            Console.ReadKey();
+        }
+    }
+}
